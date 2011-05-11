@@ -1,0 +1,26 @@
+<html><head><title>i2p KISS Search Engine 0.1</title></head>
+<body>
+<div><h1>i2p KISS Search Engine 0.1</h1></div>
+<div><p>This is an early test. It may have huge bugs.<br>
+This search engine uses gatling, sh scripts for crawling and searching, wget, grep &amp; sed, elinks for parsing html and plaintext as database</p></div>
+<br>
+<div>Search:
+<form action="search.sh" method="GET">
+   <input type="text" name="search"><br>
+   <!-- TODO: <p>AND<input type="radio" name="operator" value="AND" checked>
+   OR<input type="radio" name="operator" value="OR"></p> -->
+   <input type="submit" value="Search!">
+</form>
+</div>
+<br>
+<div><h3>Known Problems:</h3>
+<ul><li>No combination of search terms possible at the moment, multiple search terms only searches for an exact match of the phrase</li>
+<li>Results can be badly truncated. I try to "html-ify" the pages with broad paragraphs but it doesn't always work</li>
+<li>Due to searching in b32 AND normal urls there will often be duplicate results.</li>
+<li>Layout with multiple results sucks for now</li>
+<li>Composing the search results with variables in bash is slow.</li></ul></div>
+
+<div><h3>Some files that are used</h3>
+<div><a href="list.txt">List of eepsites the crawler discovered</a><br>
+</body>
+</html>

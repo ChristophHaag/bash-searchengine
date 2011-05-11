@@ -1,0 +1,26 @@
+WHAT IT DOES:
+The search engine mainly consist of two scripts:
+search.sh and crawler.sh
+
+crawler.sh:
+   crawls the URLs in list.txt, removes any html tags with elinks and saves
+   the resulting text files in the index/ directory.
+   It then greps the websites for further URLs (currently only .i2p) and adds
+   them to list.txt after making sure it is reachable.
+search.sh
+   is called through CGI
+   "grep -F"s through the text files in index/ and returns exact matches
+
+INSTALLATION:
+Just copy the files to your CGI directory and make sure the .sh scripts have +x
+permission.
+
+You should probably change:
+DOCROOT_PATH in crawler.sh
+DOCROOT_PATH in search.sh
+   (should be written in a common config file in the future)
+HTTP_PROXY_URL in crawler.sh
+
+list.txt is the file I got a while before. The URLs were all reachable once but
+now many probably are dead. Uncomment lines 85 and 86 in crawler.sh to delete
+unreachable urls.
